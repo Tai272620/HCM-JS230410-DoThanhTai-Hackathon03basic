@@ -1,0 +1,21 @@
+.note-container {
+    background-color: #fff;
+    border: 1px solid #ececec;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.delete-button {
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.material-symbols-outlined {
+    color: #f2b709;
+}
