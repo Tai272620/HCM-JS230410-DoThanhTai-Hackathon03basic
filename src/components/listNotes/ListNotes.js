@@ -13,9 +13,15 @@ const ListNotes = ({ handleAddNote, notes, handleDeleteNote }) => {
         <div className='content-container'>
             <div>
                 <textarea placeholder='Take a note' className='text-area' value={note} onChange={(e) => setNote(e.target.value)} />
-                <button onClick={() => { handleAddNote({ id: uuidv4(), note: note }); setNote("") }} className="add-button"><span className="material-symbols-outlined add">
-                    add
-                </span></button></div>
+                <button onClick={() => {
+                    if (note !== "") {
+                        handleAddNote({ id: uuidv4(), note: note }); setNote("")
+                    } else {
+                        alert("Please enter note!")
+                    }
+                }} className="add-button"><span className="material-symbols-outlined add">
+                        add
+                    </span></button></div>
             <div className='listNotes-container'>
                 {notes.map((item, index) => (
                     <Note item={item} index={index} handleDeleteNote={handleDeleteNote} />
